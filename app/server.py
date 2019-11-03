@@ -38,7 +38,16 @@ async def analyze(request):
     data = await request.form()
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    return JSONResponse({'result': str(learn.predict(img)[0])})
+    cat,index,preds = learn.predict(img)
+    return JSONResponse({'result': str(top_5_pred_labels(preds,learn.data.classes))})
+
+
+def top_5_pred_labels(preds, classes):
+    top_5 = np.flip(np.argsort(preds.numpy()[:5]))
+    labels = []
+    for i in range(len(top_5)):
+        labels.append(classes[top_5[i]])
+    return labels
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app, host='0.0.0.0', port=8080)
