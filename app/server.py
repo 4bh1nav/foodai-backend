@@ -43,7 +43,7 @@ async def analyze(request):
 
 
 def top_5_pred_labels(preds, classes):
-    top_5 = np.flip(np.argsort(preds.numpy()[:5]))
+    top_5 = np.flip(np.argsort(preds.numpy()))[:5]
     labels = []
     for i in range(len(top_5)):
         labels.append(classes[top_5[i]])
