@@ -39,7 +39,7 @@ async def analyze(request):
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     cat,index,preds = learn.predict(img)
-    return JSONResponse({'result': str(top_5_pred_labels(preds,learn.data.classes))})
+    return JSONResponse({'result': str(cat)})
 
 
 def top_5_pred_labels(preds, classes):
@@ -50,5 +50,5 @@ def top_5_pred_labels(preds, classes):
     return labels
 
 if __name__ == '__main__':
-    if 'serve' in sys.argv: uvicorn.run(app, host='0.0.0.0', port=8080)
+    uvicorn.run(app, host='0.0.0.0', port=8080)
 

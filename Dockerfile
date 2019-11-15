@@ -12,4 +12,4 @@ RUN python app/server.py
 
 EXPOSE 8080
 
-CMD ["python", "app/server.py", "serve"]
+CMD ["python", "app/server.py"]
