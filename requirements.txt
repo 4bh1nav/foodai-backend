@@ -1,4 +1,5 @@
 numpy==1.17
+gunicorn==19.9.0
 fastai
 starlette
 uvicorn

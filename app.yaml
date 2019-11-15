@@ -1,2 +1,3 @@
 runtime: custom
 env: flex
+entrypoint: gunicorn -b :$PORT server:app
