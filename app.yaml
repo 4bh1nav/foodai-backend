@@ -1,3 +1,5 @@
 runtime: custom
 env: flex
 entrypoint: gunicorn -b :$PORT server:app
+readiness_check:
+  app_start_timeout_sec: 1500
