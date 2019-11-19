@@ -8,7 +8,7 @@ from fastai.vision import *
 
 path = Path(__file__).parent
 app = Starlette()
-app.mount('/static', StaticFiles(directory='app/static'))
+#app.mount('/static', StaticFiles(directory='app/static'))
 
 
 async def download_file(url, dest):
@@ -28,10 +28,10 @@ tasks = [asyncio.ensure_future(setup_learner())]
 learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
-@app.route('/')
-def index(request):
-    html = path/'view'/'index.html'
-    return HTMLResponse(html.open().read())
+#@app.route('/')
+#def index(request):
+    #html = path/'view'/'index.html'
+    #return HTMLResponse(html.open().read())
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
