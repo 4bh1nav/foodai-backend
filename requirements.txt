@@ -1,8 +1,9 @@
 numpy==1.17
 gunicorn==19.9.0
+Flask==1.1.1
 fastai
-starlette
-uvicorn
+#starlette
+#uvicorn
 python-multipart
-aiofiles
-aiohttp
+#aiofiles
+#aiohttp

@@ -12,4 +12,4 @@ COPY app app/
 
 EXPOSE 8080
 
-CMD ["gunicorn", "-b", ":8080", "--chdir", "app/", "server:app"]
+CMD ["gunicorn", "-b", ":8080", "--chdir", "app/", "app:app"]

@@ -1,6 +1,6 @@
 runtime: custom
 env: flex
-entrypoint: gunicorn server:app -w 4 -k uvicorn.workers.UvicornWorker
+entrypoint: gunicorn -b :$PORT app:app
 readiness_check:
   app_start_timeout_sec: 1500
 resources:
