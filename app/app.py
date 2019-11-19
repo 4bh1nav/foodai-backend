@@ -25,7 +25,7 @@ def analyze():
     data = request.files['file']
     img = open_image(BytesIO(data.read()))
     cat,index,preds = learn.predict(img)
-    return jsonify({'result': str(top_5_pred_labels(preds,learn.data.classes))})
+    return jsonify({'result': top_5_pred_labels(preds,learn.data.classes)})
 
 
 def top_5_pred_labels(preds, classes):
