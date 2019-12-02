@@ -1,4 +1,6 @@
-numpy==1.17
+#numpy==1.17
+torch
+torchvision
 gunicorn==19.9.0
 Flask==1.1.1
 fastai
