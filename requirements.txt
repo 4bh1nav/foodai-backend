@@ -1,8 +1,9 @@
 #numpy==1.17
-torch
-torchvision
+#torch
+#torchvision
 gunicorn==19.9.0
 Flask==1.1.1
+https://download.pytorch.org/whl/nightly/cpu/torch_nightly-1.0.0.dev20181129-cp36-cp36m-linux_x86_64.whl
 fastai
 #starlette
 #uvicorn
