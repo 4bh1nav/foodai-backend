@@ -1,7 +1,7 @@
 #numpy==1.17
 #torch
 #torchvision
-#gunicorn==19.9.0
+gunicorn
 Flask==1.1.1
 http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
 fastai
