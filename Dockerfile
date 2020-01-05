@@ -12,4 +12,4 @@ COPY app app/
 
 EXPOSE 8080
 
-CMD ["pyhton", "app/app.py"]
+CMD ["pyhton", "main/app.py"]
