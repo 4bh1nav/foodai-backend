@@ -1,1 +1,1 @@
-web: gunicorn main:app
+web: gunicorn food_classifier:app
