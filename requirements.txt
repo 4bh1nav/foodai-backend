@@ -3,7 +3,7 @@
 #torchvision
 gunicorn
 Flask
-http://download.pytorch.org/whl/cpu/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
+http://download.pytorch.org/whl/cpu/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
 fastai
 #starlette
 #uvicorn
