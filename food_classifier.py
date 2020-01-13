@@ -15,7 +15,7 @@ def hello():
 
 def setup_learner():
     #await download_file(model_file_url, path/'models'/f'{model_file_name}.pkl')
-    learn = load_learner(path/'models')
+    learn = load_learner('main/models')
     return learn
 
 learn = setup_learner()
