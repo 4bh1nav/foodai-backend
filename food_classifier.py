@@ -4,13 +4,17 @@ from flask import request
 from flask import jsonify
 from io import BytesIO
 from fastai.vision import *
+import time
 
 app = Flask(__name__)
 path = Path(__file__).parent
 
 @app.route('/')
 def hello():
+    start = time.time()
     """Return a friendly HTTP greeting."""
+    end = time.time()
+    print("%.5f " % (end - start))
     return 'Hello World!'
 
 def setup_learner():
@@ -22,9 +26,12 @@ learn = setup_learner()
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
+    start = time.time()
     data = request.files['file']
     img = open_image(BytesIO(data.read()))
     cat,index,preds = learn.predict(img)
+    end = time.time()
+    print("%.5f " % (end - start))
     return jsonify({'result': top_5_pred_labels(preds,learn.data.classes)})
 
 
