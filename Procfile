@@ -1,1 +1,1 @@
-web: gunicorn food_classifier:app
+web: gunicorn --workers=3 --threads=2 food_classifier:app
