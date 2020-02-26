@@ -135,9 +135,12 @@ class MainPage extends React.Component {
                 <li>{item} </li>
             );
             return (
+                <div>
+                <h3>Top 5 Prediction</h3>
                 <ul>
                     {predictionItems}
                 </ul>
+                </div>
             );
         } else {
             return null
@@ -212,9 +215,8 @@ class MainPage extends React.Component {
                     )}
 
                 </Form>
-
                
-            {this.renderPrediction()}
+                {this.renderPrediction()}
 
             </div>
         );
